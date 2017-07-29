@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="theme.scss" rel="stylesheet">
+
+    {{ content_for_header }}
+
+    <script type="text/javascript">
+      NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+    </script>
+  </head>
+  <body class="{{ page.page_class_name }} page-{{ request.template | replace: '_', '-' }} js">
+
+    {% include "nav" %}
+
+    {% include "page_header" %}
+
+    <div class="main-container" id="middle">
+      <div class="main container-fluid clearfix">
+        {% include "columns_1" %}
+      </div>
+      <!-- .main -->
+    </div>
+    <!-- .main-container -->
+
+    <footer>
+      <div class="container">
+
+        {{ content_for_footer }}
+
+        {% if site.footer_content.size > 0 %}
+        <div class="footer-text">{{ site.footer_content }}</div>
+        <hr/>
+        {% endif %}
+
+        </div>
+      </div>
+      <!-- container -->
+    </footer>
+
+    <script src="bootstrap.js"></script>
+
+  </body>
+</html>

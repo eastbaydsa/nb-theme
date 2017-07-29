@@ -1,0 +1,11 @@
+{% if site.has_header_image? and page.features_count == 0 %}
+<div class="container header-image-container">
+ <img src="{{ site.header_image_url_1026 }}" class="header-image img-responsive" border="0" />
+</div>
+{% endif %}
+
+{% if page.features_count > 0 %}
+  <div class="container">
+   {% include "features" %}
+  </div>
+{% endif %}

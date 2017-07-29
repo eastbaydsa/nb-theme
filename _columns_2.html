@@ -1,0 +1,14 @@
+<!-- !! UNUSED !! -->
+<!--
+  _columns_1.html is the source of layout, but in case anything still includes
+  this file, the site will render correctly.
+-->
+
+<div class="column content-{{ request.template  | replace: '_', '-' }}">
+
+  <div class="columns-1-flash">{{ content_for_notifications }}</div>
+
+  {% yield %}
+
+</div>
+<!-- .column -->

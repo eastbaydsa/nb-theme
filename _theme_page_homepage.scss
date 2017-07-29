@@ -1,0 +1,18 @@
+.page-homepage {
+  #intro {
+    height: 400px;
+    background-size: cover;
+
+    color: white;
+  }
+
+  .text-content {
+    width: 50%;
+    height: 100%;
+    padding: $grid-gutter-width;
+    background: rgba(0,0,0,0.5);
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
