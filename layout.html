@@ -25,6 +25,8 @@
     <div class="main-container" id="middle">
       <div class="main container-fluid clearfix">
         {% include "columns_1" %}
+
+        {% subpage "events" with "upcoming_events" %}
       </div>
       <!-- .main -->
     </div>
@@ -32,6 +34,16 @@
 
     <footer>
       <div class="container">
+        <p>
+          Stay in touch
+
+          <a href='#facebook'>Facebook</a>
+          <a href='#twitter'>Twitter</a>
+        </p>
+
+        <p>
+          Sign up for our monthly newsletter:
+        </p>
 
         {{ content_for_footer }}
 
@@ -39,8 +51,6 @@
         <div class="footer-text">{{ site.footer_content }}</div>
         <hr/>
         {% endif %}
-
-        </div>
       </div>
       <!-- container -->
     </footer>

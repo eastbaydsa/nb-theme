@@ -1,0 +1,19 @@
+<h2>Join us at our next event</h2>
+
+<p>The best way to get involved is to show up in-person. We would love to see you at our next event.</p>
+
+{% for event in page.calendar.events_upcoming limit:1 %}
+  <h3><a href="{{ event.url }}">{{ event.name }}</a></h3>
+  {{ event.event.local_start_at | date: '%A, %B %d, %Y at %I:%M %p' }}
+{% endfor %}
+
+<hr />
+
+{% for event in page.calendar.events_upcoming limit:3 offset:1 %}
+  <div class="event-block">
+    {{ event.event.local_start_at | date: '%A, %B %d, %Y at %I:%M %p' }}
+    <a href="{{ event.url }}">{{ event.name }}</a>
+  </div>
+{% endfor %}
+
+<a class="btn btn-default submit-link" href="{{ page.url }}">Find more events</a>
